@@ -112,4 +112,20 @@ export class CustomerResolverBase {
 
     return results;
   }
+
+  @graphql.Query(() => String)
+  async LoginCustomer(
+    @graphql.Args()
+    args: string
+  ): Promise<string> {
+    return this.service.LoginCustomer(args);
+  }
+
+  @graphql.Query(() => String)
+  async RegisterCustomer(
+    @graphql.Args()
+    args: string
+  ): Promise<string> {
+    return this.service.RegisterCustomer(args);
+  }
 }

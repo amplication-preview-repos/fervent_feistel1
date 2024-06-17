@@ -234,4 +234,38 @@ export class CustomerControllerBase {
       select: { id: true },
     });
   }
+
+  @common.Get("/:id/login-customer")
+  @swagger.ApiOkResponse({
+    type: String,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async LoginCustomer(
+    @common.Body()
+    body: string
+  ): Promise<string> {
+    return this.service.LoginCustomer(body);
+  }
+
+  @common.Get("/:id/register-customer")
+  @swagger.ApiOkResponse({
+    type: String,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async RegisterCustomer(
+    @common.Body()
+    body: string
+  ): Promise<string> {
+    return this.service.RegisterCustomer(body);
+  }
 }

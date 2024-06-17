@@ -59,4 +59,10 @@ export class CustomerServiceBase {
       })
       .orders(args);
   }
+  async LoginCustomer(args: string): Promise<string> {
+    throw new Error("Not implemented");
+  }
+  async RegisterCustomer(args: string): Promise<string> {
+    throw new Error("Not implemented");
+  }
 }
